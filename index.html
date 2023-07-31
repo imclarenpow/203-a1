@@ -1,16 +1,47 @@
 <html lang = "en">
     <head>
         <meta charset="utf-8">
-        <title>
-            NZ Birds
-        </title>
+        <title>NZ Birds</title>
         <link rel="stylesheet" href="style.css">
-    </head>
+    </head>    
     
     <body>
         <div id="cardContainer" class="cards-wrapper">
     
         </div>
         <script src="fetch.js"></script>
+        <footer>
+            <div class="footer-container">
+              <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+              </div>
+              <div class="sort-by">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                  <option value="weight">Weight</option>
+                  <option value="length">Length</option>
+                  <option value="name">Name</option>
+                </select>
+              </div>
+              <div class="filter">
+                <label for="filter-select">Filter by:</label>
+                <select id="filter-select" multiple size="10">
+                  <option value="Not Threatened">Not Threatened</option>
+                  <option value="Naturally Uncommon">Naturally Uncommon</option>
+                  <option value="Relicit">Relicit</option>
+                  <option value="Recovering">Recovering</option>
+                  <option value="Declining">Declining</option>
+                  <option value="Nationally Increasing">Nationally Increasing</option>
+                  <option value="Nationally Vulnerable">Nationally Vulnerable</option>
+                  <option value="Nationally Endangered">Nationally Endangered</option>
+                  <option value="Nationally Critical">Nationally Critical</option>
+                  <option value="Data Deficient">Data Deficient</option>
+                </select>
+              </div>
+            </div>
+          </footer>
+        
     </body>
+    
 </html>

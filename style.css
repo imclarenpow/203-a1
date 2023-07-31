@@ -1,96 +1,130 @@
 * {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
-/* Styles for the container holding the cards */
+
+footer {
+  background-color: #f1f1f1;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-bar button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.sort-by select,
+.filter select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  margin-right: 35px;
+}
+
 .cards-wrapper {
-    display: grid; /* Set the display property to grid */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use grid for responsive layout */
-    gap: 20px; /* Adjust spacing between cards */
-    justify-content: center; /* Center the cards horizontally */
-    max-width: 960px; /* Add a maximum width to avoid excessive wrapping */
-    margin: 0 auto; /* Center the container horizontally */
-  }  
-  
-  /* Styles for the card container */
-  .card-container {
-    width: 100%; /* Use percentage for the width of each card */
-    height: 800px; /* Set a fixed height for the card */
-    border-radius: 20px;
-    background: linear-gradient(135deg, #4c4c4c, #222);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Set a more pronounced shadow */
-    color: #fff; /* Set text color to white */
-    position: relative;
-    overflow: hidden; /* Hide any overflowing content */
-  }
-  
-  /* Styles for the bird image */
-  .bird-image {
-    width: 100%;
-    height: 60%; /* Use a fixed height for the image */
-    object-fit: cover; /* Ensure the image covers the container */
-    border-radius: 20px;
-    transform-origin: center center;
-    filter: saturate(0);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-    
-  }
-  .bird-image:hover {
-    overflow: visible;
-    transform: scale(0.7) translate(5%, -5%);
-    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1;
-    filter: saturate(1);
-  }
-  
-  /* Styles for the bird name */
-  .bird-name {
-    padding-left: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-  }
-  
-  /* Styles for the bird type */
-  .bird-type {
-    padding-left: 20px;
-    font-size: 18px;
-    margin-top: 5px;
-    color: #ccc;
-  }
-  
-  /* Styles for the bird stats */
-  .bird-stats {
-    font-size: 16px;
-    margin-top: 15px;
-    padding: 0 15px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Styles for the bird stats list items */
-  .bird-stats li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 5px;
-    align-items: center;
-    text-align: right;
-  }
-  
-  /* Styles for the bird stats labels */
-  .bird-stats .stat-label {
-    font-weight: bold;
-    text-align: left;
-  }
-  
-  /* Styles for the bird credit */
-  .bird-credit {
-    font-size: 12px;
-    margin-top: auto; /* Push the credit to the bottom */
-    color: #ccc; /* Use a lighter color for the credit */
-    position: absolute;
-    bottom: 10px;
-    left: 15px;
-    font-family: 'Arial', sans-serif; /* Use the same modern font */
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.card-container {
+  width: 100%;
+  height: 800px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #4c4c4c, #222);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.bird-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 20px;
+  transform-origin: center center;
+  filter: saturate(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.bird-image:hover {
+  overflow: visible;
+  transform: scale(0.7) translate(5%, -5%);
+  box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 1;
+  filter: saturate(1);
+}
+
+.bird-name {
+  padding-left: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.bird-type {
+  padding-left: 20px;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #ccc;
+}
+
+.bird-stats {
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bird-stats li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  align-items: center;
+  text-align: right;
+}
+
+.bird-stats .stat-label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.bird-credit {
+  font-size: 12px;
+  margin-top: auto;
+  color: #ccc;
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-family: 'Arial', sans-serif;
+}
