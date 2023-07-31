@@ -28,8 +28,19 @@
     width: 100%;
     height: 60%; /* Use a fixed height for the image */
     object-fit: cover; /* Ensure the image covers the container */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 20px;
+    transform-origin: center center;
+    filter: saturate(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    
+  }
+  .bird-image:hover {
+    overflow: visible;
+    transform: scale(0.7) translate(5%, -5%);
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+    filter: saturate(1);
   }
   
   /* Styles for the bird name */
@@ -37,7 +48,7 @@
     padding-left: 15px;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 15px; /* Increase margin top for more spacing */
+    margin-top: 15px;
   }
   
   /* Styles for the bird type */
@@ -45,7 +56,7 @@
     padding-left: 20px;
     font-size: 18px;
     margin-top: 5px;
-    color: #ccc; /* Use a lighter color for the bird type */
+    color: #ccc;
   }
   
   /* Styles for the bird stats */
