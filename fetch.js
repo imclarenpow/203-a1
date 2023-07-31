@@ -6,12 +6,11 @@ async function fetcher() {
 
     jsonData.forEach(bird => {
       const cardWrapper = document.createElement('div');
-      cardWrapper.classList.add('card-wrapper'); // Add a new class for the wrapper
+      cardWrapper.classList.add('card-wrapper');
 
       const card = createBirdCard(bird);
-      cardWrapper.appendChild(card); // Append the card to the wrapper
-
-      cardContainer.appendChild(cardWrapper); // Append the wrapper to the main container
+      cardWrapper.appendChild(card);
+      cardContainer.appendChild(cardWrapper);
     });
   } catch (error) {
     console.error('Error when trying to fetch nzbird.json data', error);
