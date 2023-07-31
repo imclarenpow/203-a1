@@ -1,45 +1,85 @@
-/* Styles for the card container */
-.card-container {
-    width: 300px;
-    height: 420px;
-    border: 3px solid #ef5350;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+* {
+    font-family: 'Arial', sans-serif;
+}
+/* Styles for the container holding the cards */
+.cards-wrapper {
+    display: grid; /* Set the display property to grid */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Use grid for responsive layout */
+    gap: 20px; /* Adjust spacing between cards */
+    justify-content: center; /* Center the cards horizontally */
+    max-width: 960px; /* Add a maximum width to avoid excessive wrapping */
+    margin: 0 auto; /* Center the container horizontally */
+  }  
+  
+  /* Styles for the card container */
+  .card-container {
+    width: 100%; /* Use percentage for the width of each card */
+    height: 800px; /* Set a fixed height for the card */
+    border-radius: 20px;
+    background: linear-gradient(135deg, #4c4c4c, #222);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Set a more pronounced shadow */
+    color: #fff; /* Set text color to white */
+    position: relative;
+    overflow: hidden; /* Hide any overflowing content */
   }
   
+  /* Styles for the bird image */
   .bird-image {
-    width: 180px;
-    height: 180px;
-    margin-top: 20px;
+    width: 100%;
+    height: 60%; /* Use a fixed height for the image */
+    object-fit: cover; /* Ensure the image covers the container */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
   }
   
+  /* Styles for the bird name */
   .bird-name {
+    padding-left: 15px;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 15px; /* Increase margin top for more spacing */
   }
   
+  /* Styles for the bird type */
   .bird-type {
+    padding-left: 20px;
     font-size: 18px;
     margin-top: 5px;
+    color: #ccc; /* Use a lighter color for the bird type */
   }
   
-  .bird-description {
-    font-size: 14px;
+  /* Styles for the bird stats */
+  .bird-stats {
+    font-size: 16px;
     margin-top: 15px;
-    padding: 0 20px;
-    text-align: center;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
   }
   
+  /* Styles for the bird stats list items */
+  .bird-stats li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-items: center;
+    text-align: right;
+  }
+  
+  /* Styles for the bird stats labels */
+  .bird-stats .stat-label {
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  /* Styles for the bird credit */
   .bird-credit {
     font-size: 12px;
-    margin-top: 5px;
-    color: #666;
+    margin-top: auto; /* Push the credit to the bottom */
+    color: #ccc; /* Use a lighter color for the credit */
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    font-family: 'Arial', sans-serif; /* Use the same modern font */
   }
   
