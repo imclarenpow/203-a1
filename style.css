@@ -1,7 +1,9 @@
 * {
   font-family: 'Arial', sans-serif;
 }
-
+body{
+  background: linear-gradient(180deg, lightgray, white);
+}
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
@@ -12,7 +14,7 @@
 }
 
 footer {
-  background-color: #f1f1f1;
+  background: linear-gradient(135deg, #0d6035, #19633d);
   padding: 5px;
   position: fixed;
   bottom: 0;
@@ -28,30 +30,57 @@ footer {
 .search-bar {
   display: flex;
   align-items: center;
+  
 }
+
+
 
 .search-bar input {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 10px;
 }
 
 .search-bar button {
   margin-left: 5px;
   padding: 5px;
-  background-color: #007bff;
+  background-color: #595959;
   color: #fff;
   border: none;
   border-radius: 4px;
+  font-size: 10px;
 }
 
-.sort-by select,
-.filter select {
+/*.search-bar button:hover,
+.bird-name:hover,
+.bird-type:hover,
+.bird-stats:hover {
+  animation: rainbow-flashing 0.5s infinite;
+}*/
+.sort-by{
+  display: flex;
+  align-items: center;
+  font-size: 10px;
   padding: 5px;
-  border: 1px solid #ccc;
   border-radius: 5px;
   width: 100px;
   margin-right: 0;
+}
+.filter{
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  max-width: 500px;
+  margin: 0 auto;
+  align-items: center;
+}
+.filter label {
+  color: white;
+  margin-right: auto;
+}
+.filter input[type="checkbox"]{
+  margin-right: 5px;
 }
 
 .cards-wrapper {
@@ -59,18 +88,20 @@ footer {
   gap: 10px;
   justify-content: flex-start;
   max-width: 960px;
-  margin: 0;
+  margin-left: 0;
+  margin-right: 100px;
 }
 
 .card-container {
   width: 200px;
-  height: 400px;
+  height: 420px;
   border-radius: 20px;
   background: linear-gradient(135deg, #4c4c4c, #222);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   color: #fff;
   position: relative;
   overflow: hidden;
+  transition: background 0.7s ease;
 }
 
 .bird-image {
@@ -80,11 +111,14 @@ footer {
   border-radius: 20px;
   transform-origin: center center;
   filter: saturate(0);
-  transition: filter 0.3s ease;
+  transition: filter 0.7s ease;
 }
 
-.bird-image:hover {
+.card-container:hover .bird-image{
   filter: saturate(1);
+}
+.card-container:hover{
+  background: linear-gradient(135deg, #0d6035, #19633d);
 }
 
 .bird-name {
@@ -130,4 +164,27 @@ footer {
   bottom: 10px;
   left: 15px;
   font-family: 'Arial', sans-serif;
+}
+@keyframes rainbow-flashing {
+  0% {
+    color: red;
+  }
+  16.66% {
+    color: orange;
+  }
+  33.33% {
+    color: yellow;
+  }
+  50% {
+    color: green;
+  }
+  66.66% {
+    color: blue;
+  }
+  83.33% {
+    color: indigo;
+  }
+  100% {
+    color: violet;
+  }
 }
