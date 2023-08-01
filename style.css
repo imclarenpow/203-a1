@@ -2,6 +2,15 @@
   font-family: 'Arial', sans-serif;
 }
 
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkbox-group label {
+  margin-right: 10px;
+}
+
 footer {
   background-color: #f1f1f1;
   padding: 20px;

@@ -1,13 +1,50 @@
-async function fetcher() {
+// inital fetch (name)
+fetch(0);
+// makes the page change with the sort button being used
+document.addEventListener('DOMContentLoaded', () => {
+  const sortBySel = document.getElementById('sort');
+  sortBySel.addEventListener('change', sortChange);
+  fetcher(sortBySel.value);
+});
+function sortChange(event) {
+  const sortByValue = event.target.value;
+  if (sortByValue === 'name') {
+    fetcher(0);
+  } else if (sortByValue === 'weight') {
+    fetcher(1);
+  } else if (sortByValue === 'length') {
+    fetcher(2);
+  }
+}
+
+async function fetcher(sortValue) {
   const cardContainer = document.getElementById('cardContainer');
+  //remove previous containers made and stuff
+  cardContainer.innerHTML = '';
   try {
     const response = await fetch('data/nzbird.json');
     const jsonData = await response.json();
-
+  //lets chuck in a couple of sorting statements just to check they
+  //work the way they should SKUX! they do
+  if(sortValue===0){
+    //sort by name (Maori) thanks stackoverflow for this one
+    jsonData.sort(function(a,b){
+      return a.primary_name > b.primary_name ? 1: (a.primary_name === b.primary_name ? 0 : -1);
+    });
+  }else if(sortValue===1){
+  //sort by weight 
+    jsonData.sort(function(a,b){
+      return a.size.weight.value - b.size.weight.value;
+    });
+  }else if(sortValue===2){
+  //sort by length
+    jsonData.sort(function(a,b){
+      return a.size.length.value - b.size.length.value;
+    });
+  }
     jsonData.forEach(bird => {
       const cardWrapper = document.createElement('div');
       cardWrapper.classList.add('card-wrapper');
-
       const card = createBirdCard(bird);
       cardWrapper.appendChild(card);
       cardContainer.appendChild(cardWrapper);
@@ -74,7 +111,4 @@ function createBirdCard(bird) {
 
   return card;
 }
-  
-  
-  fetcher();
   
