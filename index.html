@@ -7,14 +7,13 @@
     
     <body>
         <div id="cardContainer" class="cards-wrapper">
-    
+            <!-- JS injects bird cards into here -->
         </div>
         <script src="fetch.js"></script>
         <footer>
             <div class="footer-container">
               <div class="search-bar">
                 <input type="text" placeholder="Search...">
-                <button>Search</button>
               </div>
               <div class="sort-by">
                 <select id="sort">
@@ -25,16 +24,16 @@
               </div>
               <div class="filter">
                 <div class="checkbox-group">
-                  <label><input type="checkbox" value="Not Threatened">Not Threatened</label>
-                  <label><input type="checkbox" value="Naturally Uncommon">Naturally Uncommon</label>
-                  <label><input type="checkbox" value="Relicit">Relicit</label>
-                  <label><input type="checkbox" value="Recovering">Recovering</label>
-                  <label><input type="checkbox" value="Declining">Declining</label>
-                  <label><input type="checkbox" value="Nationally Increasing">Nationally Increasing</label>
-                  <label><input type="checkbox" value="Nationally Vulnerable">Nationally Vulnerable</label>
-                  <label><input type="checkbox" value="Nationally Endangered">Nationally Endangered</label>
-                  <label><input type="checkbox" value="Nationally Critical">Nationally Critical</label>
-                  <label><input type="checkbox" value="Data Deficient">Data Deficient</label>
+                  <label id="not-thr"><input type="checkbox"  value="Not Threatened">Not Threatened</label>
+                  <label id="uncom"><input type="checkbox"  value="Naturally Uncommon">Naturally Uncommon</label>
+                  <label id="relicit"><input type="checkbox"  value="Relicit">Relicit</label>
+                  <label id="recov"><input type="checkbox"  value="Recovering">Recovering</label>
+                  <label id="declin"><input type="checkbox"  value="Declining">Declining</label>
+                  <label id="increas"><input type="checkbox"  value="Nationally Increasing">Increasing</label>
+                  <label id="vuln"><input type="checkbox"  value="Nationally Vulnerable">Vulnerable</label>
+                  <label id="endanger"><input type="checkbox"  value="Nationally Endangered">Endangered</label>
+                  <label id="crit"><input type="checkbox"  value="Nationally Critical">Critical</label>
+                  <label id="deficient"><input type="checkbox"  value="Data Deficient">Data Deficient</label>
                 </div>
               </div>              
             </div>
