@@ -146,7 +146,7 @@ footer {
 
 .card-container {
   width: 25rem;
-  height: 49rem;
+  height: 100%;
   border-radius: 1.25rem;
   background: linear-gradient(135deg, #4c4c4c, #222);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
