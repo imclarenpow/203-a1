@@ -10,6 +10,7 @@
             <!-- JS injects bird cards into here -->
         </div>
         <script src="fetch.js"></script>
+        <script src="scrolling.js"></script>
         <footer>
             <div class="footer-container">
               <div class="search-bar">
@@ -23,7 +24,8 @@
                 </select>
               </div>
               <div class="filter">
-                <div class="checkbox-group">
+                <div id="checkbox-group">
+                  <label id="all-check"><input type="checkbox" value="All">All</label>
                   <label id="not-thr"><input type="checkbox"  value="Not Threatened">Not Threatened</label>
                   <label id="uncom"><input type="checkbox"  value="Naturally Uncommon">Naturally Uncommon</label>
                   <label id="relicit"><input type="checkbox"  value="Relicit">Relicit</label>

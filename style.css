@@ -63,19 +63,18 @@ footer {
 .filter {
   justify-content: flex-end;
   font-size: 1rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: flex;  
   max-width: 50rem;
   margin: 0 1.5rem;
   max-height: 6rem;
 }
 
-.checkbox-group {
+#checkbox-group {
   display: flex;
   flex-wrap: wrap;
 }
 
-.checkbox-group label {
+#checkbox-group label {
   color: #fff;
   margin-right: 0;
   flex-basis: calc(15% - 1rem); /* Adjusted to 25% to fit four columns */
@@ -83,6 +82,9 @@ footer {
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
   margin-left: auto;
+}
+#all-check{
+  background-color: gray;
 }
 #not-thr{
   background-color: #02a028;
