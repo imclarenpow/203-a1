@@ -20,7 +20,7 @@ function scrollHorizontally(timestamp) {
     isScrolling = false;
   }
 }
-//main regular old scrolling logic for horizontal scrolling
+//main regular old scrolling logic for horizontal scrolling (booooring no one asked)
 const container = document.getElementById('cardContainer');
 container.addEventListener('wheel', (event) => {
   event.preventDefault();

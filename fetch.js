@@ -1,6 +1,7 @@
 //the overpowering variable that must see all
 let jsonData;
 let sortByValue;
+let loadingPlaceholder;
 
 document.addEventListener('DOMContentLoaded', () => {
   //method that deals with the checkbox checking, moved because it was taking up space
@@ -10,9 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchAndSort();
   const sortBySel = document.getElementById('sort');
   const filterUse = document.getElementById('checkbox-group');
+  const searchUse = document.getElementById('search-bar');
+  searchUse.addEventListener('change', (event) =>{
+    searchLogic(event);
+  });
   filterUse.addEventListener('change', (event) =>{
-    const filterValues = checkChange(event);
-    filterLogic(filterValues);
+    fetchAndSort();
   });
   //so that i can use the return value to push into the fetcher.
   sortBySel.addEventListener('change', (event) => {
@@ -44,16 +48,49 @@ function sortChange(event) {
     return 2;
   }
 }
-async function filterLogic(applied){
-  fetcher();
-  jsonData.forEach(bird => {
-    console.log('bird-name');
-  });
-}
-async function fetchAndSort(){
+//based off of my below code for filters
+async function searchLogic(event) {
+  const searchTerm = event.target.value.trim();
   await fetcher();
+  let tempData = [];
+  const normalizedSearchTerm = _.deburr(searchTerm.toLowerCase());
+
+  jsonData.forEach((bird) => {
+    const normalizedPrimaryName = _.deburr(bird.primary_name.toLowerCase());
+    const normalizedEnglishName = _.deburr(bird.english_name.toLowerCase());
+
+    if (
+      normalizedPrimaryName.includes(normalizedSearchTerm) ||
+      normalizedEnglishName.includes(normalizedSearchTerm)
+    ) {
+      tempData.push(bird);
+    }
+    
+  });
+  jsonData = tempData;
   sorter(sortByValue);
 }
+
+// oh boy it actually works what the heck
+async function filterLogic(applied){
+  let tempData = [];
+  jsonData.forEach(bird => {
+    applied.forEach(value => {
+      if(value === bird.status){
+        tempData.push(bird);
+      }
+    });
+  });
+  jsonData = tempData;
+  sorter(sortByValue);
+}
+
+async function fetchAndSort() {
+  await fetcher();
+  await filterLogic(getCheckedCheckboxes(document.getElementById('checkbox-group')));
+  sorter(sortByValue);
+}
+
 async function fetcher() {
   const cardContainer = document.getElementById('cardContainer');
   //remove previous containers made and stuff
@@ -64,8 +101,6 @@ async function fetcher() {
   } catch (error) {
     console.error('Error when trying to fetch nzbird.json data', error);
   }
-  sorter(sortByValue);
-  
 }
 
 function sorter(sortValue){

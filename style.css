@@ -23,6 +23,7 @@ footer {
   position: fixed;
   bottom: 0;
   left: 0;
+  height: 11vh;
   width: 100%;
 }
 
@@ -31,20 +32,19 @@ footer {
   justify-content: left;
 }
 
-.search-bar {
+#search-bar {
   justify-content: flex-start;
   display: flex;
   align-items: center;
   margin-right: 0rem;
 }
 
-.search-bar input {
+#search-bar input {
   padding: 0.313rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   font-size: 1rem;
 }
-
 .sort-by {
   display: flex;
   align-items: center;
@@ -145,8 +145,8 @@ footer {
 }
 
 .card-container {
-  width: 25rem;
-  height: 100%;
+  width: 25vw;
+  height: 83vh;
   border-radius: 1.25rem;
   background: linear-gradient(135deg, #4c4c4c, #222);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
