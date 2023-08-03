@@ -7,7 +7,15 @@ body {
   white-space: nowrap;
   overflow-x: hidden;
 }
-
+p {
+  font-size: 1rem;
+  margin: 0;
+  color: white;
+  
+}
+#link{
+  color: white;
+}
 .checkbox-group {
   display: flex;
   flex-wrap: wrap;
@@ -19,7 +27,7 @@ body {
 
 footer {
   background: linear-gradient(135deg, #0d6035, #19633d);
-  padding: 0.8rem;
+  padding: 1rem;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -28,7 +36,7 @@ footer {
 }
 
 .footer-container {
-  display: flex;
+  display: block;
   justify-content: left;
 }
 
@@ -46,42 +54,43 @@ footer {
   font-size: 1rem;
 }
 .sort-by {
+  position: relative;
   display: flex;
   align-items: center;
   font-size: 1.5rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   justify-content: flex-start;
-  width: 12rem;
-  margin-right: auto;
-  margin-left: 0.5rem;
+  margin: 0 0.5rem;
 }
 .sort-by::before{
   content: "";
 }
-
+#search-n-sort {
+  display: flex;
+  margin: 0.5rem 0.75rem;
+  align-items: center;
+}
 .filter {
-  justify-content: flex-end;
   font-size: 1rem;
   display: flex;  
   max-width: 50rem;
-  margin: 0 1.5rem;
-  max-height: 6rem;
+  margin: 1rem 0.75rem;
 }
 
 #checkbox-group {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
+  padding-top: 0.6rem;
+  gap: 0.75rem;
 }
 
 #checkbox-group label {
   color: #fff;
-  margin-right: 0;
-  flex-basis: calc(15% - 1rem); /* Adjusted to 25% to fit four columns */
+  flex: 1;
   padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
   transition: background-color 0.2s ease;
-  margin-left: auto;
 }
 #all-check{
   background-color: gray;
@@ -131,7 +140,11 @@ footer {
 .filter label {
   margin-bottom: 0.5rem;
 }
-
+#home-img{
+  width: auto;
+  height: 2rem;
+  margin-right: 1rem;
+}
 
 .cards-wrapper {
   display: inline-flex;
@@ -139,9 +152,10 @@ footer {
   justify-content: flex-start;
   max-width: 100%;
   margin-left: 0;
-  margin-right: 10rem;
+  margin-right: 0;
   overflow-x: auto;
   white-space: nowrap;
+  height: 86vh;
 }
 
 .card-container {
