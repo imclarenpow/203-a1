@@ -5,48 +5,46 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
     </head>    
-    
     <body>
-      <div id="bg">
-        <div id="cardContainer" class="cards-wrapper">
-            <!-- JS injects bird cards into here -->
-        </div>
-        <script src="script.js"></script>
-        <script src="scrolling.js"></script>
-        <footer>
-            <div class="footer-container">
-              <div id="search-n-sort">
-                <a href="https://www.birdsnz.org.nz"><img id="home-img"src="kiwi.png" alt="birdsnz.org.nz"></a>
-                <div id="search-bar">
-                  <input type="text" placeholder="Search...">
-                </div>
-                <div class="sort-by">
-                  <select id="sort">
-                    <option value="name">Name</option>
-                    <option value="length">Length</option>
-                    <option value="weight">Weight</option> 
-                  </select>
-                </div>
-                <p>Credit to <a id="link" href="https://www.birdsnz.org.nz">Birds New Zealand</a> for educational use within the University of Otago </p>
-              </div> 
-              <div class="filter">
-                <div id="checkbox-group">
-                  <label id="all-check"><input type="checkbox" value="All" checked>All</label>
-                  <label id="not-thr"><input type="checkbox"  value="Not Threatened" checked>Not Threatened</label>
-                  <label id="uncom"><input type="checkbox"  value="Naturally Uncommon" checked>Naturally Uncommon</label>
-                  <label id="relicit"><input type="checkbox"  value="Relicit" checked>Relicit</label>
-                  <label id="recov"><input type="checkbox"  value="Recovering" checked>Recovering</label>
-                  <label id="declin"><input type="checkbox"  value="Declining" checked>Declining</label>
-                  <label id="increas"><input type="checkbox"  value="Nationally Increasing" checked>Increasing</label>
-                  <label id="vuln"><input type="checkbox"  value="Nationally Vulnerable" checked>Vulnerable</label>
-                  <label id="endanger"><input type="checkbox"  value="Nationally Endangered" checked>Endangered</label>
-                  <label id="crit"><input type="checkbox"  value="Nationally Critical" checked>Critical</label>
-                  <label id="deficient"><input type="checkbox"  value="Data Deficient" checked>Data Deficient</label>
-                </div>
-              </div>            
-            </div>
-          </footer>
-        </div>  
+      <div id="cardContainer" class="cards-wrapper">
+          <!-- JS injects bird cards into here -->
+      </div>
+      <script src="script.js"></script>
+      <script src="cosmetic.js"></script>
+      <script src="overlay.js"></script>
+      <footer>
+          <div class="footer-container">
+            <div id="search-n-sort">
+              <a href="https://www.birdsnz.org.nz"><img id="home-img"src="kiwi.png" alt="birdsnz.org.nz"></a>
+              <div id="search-bar">
+                <input type="text" placeholder="Search...">
+              </div>
+              <div class="sort-by">
+                <select id="sort">
+                  <option value="name">Name</option>
+                  <option value="length">Length</option>
+                  <option value="weight">Weight</option> 
+                </select>
+              </div>
+              <p>Credit to <a id="link" href="https://www.birdsnz.org.nz">Birds New Zealand</a> for educational use within the University of Otago </p>
+            </div> 
+            <div class="filter">
+              <div id="checkbox-group">
+                <label id="all-check"><input type="checkbox" value="All" checked>All</label>
+                <label id="not-thr"><input type="checkbox"  value="Not Threatened" checked>Not Threatened</label>
+                <label id="uncom"><input type="checkbox"  value="Naturally Uncommon" checked>Naturally Uncommon</label>
+                <label id="relicit"><input type="checkbox"  value="Relicit" checked>Relicit</label>
+                <label id="recov"><input type="checkbox"  value="Recovering" checked>Recovering</label>
+                <label id="declin"><input type="checkbox"  value="Declining" checked>Declining</label>
+                <label id="increas"><input type="checkbox"  value="Nationally Increasing" checked>Increasing</label>
+                <label id="vuln"><input type="checkbox"  value="Nationally Vulnerable" checked>Vulnerable</label>
+                <label id="endanger"><input type="checkbox"  value="Nationally Endangered" checked>Endangered</label>
+                <label id="crit"><input type="checkbox"  value="Nationally Critical" checked>Critical</label>
+                <label id="deficient"><input type="checkbox"  value="Data Deficient" checked>Data Deficient</label>
+              </div>
+            </div>            
+          </div>
+        </footer> 
     </body>
     
 </html>

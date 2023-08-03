@@ -83,7 +83,6 @@ function htmlWriter(finalData){
 }
 // individual bird card creation
 function createBirdCard(bird){
-
     const card = document.createElement('div');
     card.classList.add('card-container');
 
@@ -94,8 +93,11 @@ function createBirdCard(bird){
 
     const name = document.createElement('div');
     name.classList.add('bird-name');
-    name.textContent = bird.primary_name;
-
+    if(_.deburr(bird.primary_name.toLowerCase()) === _.deburr(bird.english_name.toLowerCase())){
+        name.textContent = bird.primary_name;
+    }else{
+        name.innerHTML = bird.primary_name + '<br>' + bird.english_name;
+    }
     const type = document.createElement('div');
     type.classList.add('bird-type');
     type.textContent = bird.scientific_name;
@@ -111,6 +113,7 @@ function createBirdCard(bird){
         'Status': bird.status,
         'Order': bird.order
     };
+    card.classList.add(bird.status.replace(/\s/g, '').toLowerCase());
     for (const stat in stats) {
         const listItem = document.createElement('li');
         const statLabel = document.createElement('span');
@@ -129,7 +132,6 @@ function createBirdCard(bird){
     const photoCredit = document.createElement('div');
     photoCredit.classList.add('bird-credit');
     photoCredit.textContent = 'Photo Credit: ' + bird.photo.credit;
-  
 
     card.appendChild(image);
     card.appendChild(name);
@@ -139,6 +141,7 @@ function createBirdCard(bird){
 
     return card;
 }
+
 function allCheck(){
     const allCheckbox = document.getElementById('all-check');
     const checkboxes = document.querySelectorAll('#checkbox-group input[type="checkbox"]');

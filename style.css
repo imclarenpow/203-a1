@@ -3,9 +3,10 @@
 }
 
 body {
-  background: linear-gradient(180deg, lightgray, white);
+  background: linear-gradient(180deg, gray, lightgray);
   white-space: nowrap;
   overflow-x: hidden;
+  margin: 0;
 }
 p {
   font-size: 1rem;
@@ -13,6 +14,7 @@ p {
   color: white;
   
 }
+
 #link{
   color: white;
 }
@@ -113,7 +115,7 @@ footer {
 #increas{
   background-color: #c26967;
 } 
-#vuln{
+#vuln,.nationallyvulnerable:hover{
   background-color: #9b0000;
 }
 #endanger{
@@ -151,8 +153,7 @@ footer {
   gap: 1rem;
   justify-content: flex-start;
   max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0.8rem 0;
   overflow-x: auto;
   white-space: nowrap;
   height: 86vh;
@@ -236,26 +237,3 @@ footer {
   font-family: 'Arial', sans-serif;
 }
 
-@keyframes rainbow-flashing {
-  0% {
-    color: red;
-  }
-  16.66% {
-    color: orange;
-  }
-  33.33% {
-    color: yellow;
-  }
-  50% {
-    color: green;
-  }
-  66.66% {
-    color: blue;
-  }
-  83.33% {
-    color: indigo;
-  }
-  100% {
-    color: violet;
-  }
-}
