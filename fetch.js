@@ -1,8 +1,8 @@
 //the overpowering variable that must see all
 let jsonData;
-let sortByValue;
+let sortByValue = 0;
 let loadingPlaceholder;
-
+let searchTerm = '';
 document.addEventListener('DOMContentLoaded', () => {
   //method that deals with the checkbox checking, moved because it was taking up space
   allCheckboxChecker();
@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterUse = document.getElementById('checkbox-group');
   const searchUse = document.getElementById('search-bar');
   searchUse.addEventListener('change', (event) =>{
-    searchLogic(event);
+    searchTerm = event.target.value;
+    searchLogic();
   });
   filterUse.addEventListener('change', (event) =>{
     fetchAndSort();
@@ -21,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //so that i can use the return value to push into the fetcher.
   sortBySel.addEventListener('change', (event) => {
     sortByValue = sortChange(event);
-    fetchAndSort();
+    noFetchJustSort();
   });
 });
 
@@ -49,8 +50,7 @@ function sortChange(event) {
   }
 }
 //based off of my below code for filters
-async function searchLogic(event) {
-  const searchTerm = event.target.value.trim();
+async function searchLogic() {
   await fetcher();
   let tempData = [];
   const normalizedSearchTerm = _.deburr(searchTerm.toLowerCase());
@@ -84,7 +84,11 @@ async function filterLogic(applied){
   jsonData = tempData;
   sorter(sortByValue);
 }
-
+async function noFetchJustSort(){
+  const cardContainer = document.getElementById('cardContainer');
+  cardContainer.innerHTML = '';
+  sorter(sortByValue);
+}
 async function fetchAndSort() {
   await fetcher();
   await filterLogic(getCheckedCheckboxes(document.getElementById('checkbox-group')));
