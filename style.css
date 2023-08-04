@@ -97,37 +97,56 @@ footer {
 #all-check{
   background-color: gray;
 }
-#not-thr{
+#not-thr,.card-container:hover  .notthreatened {
   background-color: #02a028;
 }
-#uncom{
+
+#uncom,.card-container:hover  .naturallyuncommon {
   background-color: #649a31;
 }
-#relicit{
+
+#relicit,.card-container:hover  .relicit {
   background-color: #99cb68;
 }
-#recov{
+
+#recov,.card-container:hover  .recovering {
   background-color: #fecc33;
 }
-#declin{
+
+#declin,.card-container:hover  .declining {
   background-color: #fe9a01;
 }
-#increas{
+
+#increas,.card-container:hover  .nationallyincreasing {
   background-color: #c26967;
-} 
-#vuln,.nationallyvulnerable:hover{
+}
+
+#vuln,.card-container:hover  .nationallyvulnerable {
   background-color: #9b0000;
 }
-#endanger{
+
+#endanger,.card-container:hover  .nationallyendangered {
   background-color: #660032;
 }
-#crit{
+
+#crit,.card-container:hover .nationallycritical {
   background-color: #320033;
 }
-#deficient{
+
+#deficient,.card-container:hover .datadeficient {
   background-color: black;
 }
 
+.status-circle {
+  position: absolute;
+  bottom: 10px; /* Adjust the vertical position as needed */
+  right: 10px; /* Adjust the horizontal position as needed */
+  width: 30px; /* Set the width of the circle */
+  height: 30px; /* Set the height of the circle */
+  border-radius: 50%; /* Make the element a circle */
+  /* You can add more styles like background color, border, etc. */
+  transition: background-color 1s ease;
+}
 #not-thr:hover,#uncom:hover,#relicit:hover,#recov:hover,#declin:hover,#increas:hover,#vuln:hover,
 #endanger:hover,#crit:hover,#deficient:hover{
   background: linear-gradient(135deg, #4c4c4c, #222);
@@ -232,8 +251,8 @@ footer {
   margin-top: auto;
   color: #ccc;
   position: absolute;
-  bottom: 0.313rem;
-  left: 0.938rem;
+  bottom: 0.75rem;
+  left: 1rem;
   font-family: 'Arial', sans-serif;
 }
 

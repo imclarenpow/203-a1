@@ -113,7 +113,6 @@ function createBirdCard(bird){
         'Status': bird.status,
         'Order': bird.order
     };
-    card.classList.add(bird.status.replace(/\s/g, '').toLowerCase());
     for (const stat in stats) {
         const listItem = document.createElement('li');
         const statLabel = document.createElement('span');
@@ -133,11 +132,16 @@ function createBirdCard(bird){
     photoCredit.classList.add('bird-credit');
     photoCredit.textContent = 'Photo Credit: ' + bird.photo.credit;
 
+    const circle = document.createElement('div');
+    circle.classList.add('status-circle');
+    circle.classList.add(bird.status.replace(/\s/g, '').toLowerCase());
+
     card.appendChild(image);
     card.appendChild(name);
     card.appendChild(type);
     card.appendChild(statsList);
     card.appendChild(photoCredit);
+    card.appendChild(circle);
 
     return card;
 }
